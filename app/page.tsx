@@ -16,7 +16,7 @@ export default async function HomePage() {
 
   if (hasSupabase) {
     try {
-      const supabase = createClient()
+      const supabase = await createClient()
 
       const { data: userData } = await supabase.auth.getUser()
       user = userData.user

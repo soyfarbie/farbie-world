@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default async function PostPage({ params }: Props) {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   const { data: { user } } = await supabase.auth.getUser()
 
